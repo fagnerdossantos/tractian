@@ -1,5 +1,4 @@
-# TractianChallenge
+# Tractian
 
-challenge by Tractian
-> https://github.com/tractian/challenges/blob/main/mobile/README.md
+> [Tractian Mobile Challenge](https://github.com/tractian/challenges/blob/main/mobile/README.md)
  
