@@ -1,5 +1,5 @@
-import 'package:tractian/asset.dart';
-import 'package:tractian/hierarchical_item.dart';
+import 'package:tractian/logic/models/asset.dart';
+import 'package:tractian/logic/interfaces/hierarchical_item.dart';
 
 final class Location implements HierarchicalItem<Location> {
   //

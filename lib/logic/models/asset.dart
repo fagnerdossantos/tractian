@@ -1,4 +1,4 @@
-import 'package:tractian/hierarchical_item.dart';
+import 'package:tractian/logic/interfaces/hierarchical_item.dart';
 
 final class Asset implements HierarchicalItem<Asset> {
   //
