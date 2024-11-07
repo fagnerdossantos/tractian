@@ -14,7 +14,7 @@ final class TreeHome extends TreeState {
 }
 
 final class TreeTreeView extends TreeState {
-  final List<HierarchicalItem> locations;
+  final List<HierarchicalItem> hierarchy;
 
-  TreeTreeView({required this.locations});
+  TreeTreeView({required this.hierarchy});
 }

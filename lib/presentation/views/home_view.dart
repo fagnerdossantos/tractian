@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tractian/logic/bloc/tree_bloc.dart';
+import 'package:tractian/logic/providers/app_instancies.dart';
 
 import '../../logic/models/company.dart';
 import '../components/neumorphic_box.dart';
@@ -43,7 +45,9 @@ class HomeView extends StatelessWidget {
 
                     child: NeumorphicBox(
                       label: company.name,
-                      callBack: () {},
+                      callBack: () => getIt<TreeBloc>().add(
+                        LoadTree(companyId: company.id),
+                      ),
                     ),
                   );
                 },

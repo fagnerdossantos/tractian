@@ -12,7 +12,7 @@ class TreeController {
     return switch (item) { Asset(status: "alert") => true, _ => false };
   }
 
-  String itemType(HierarchicalItem item) {
+  String itemToImage(HierarchicalItem item) {
     return switch (item) {
       Location() => 'assets/icons/location.png',
       Asset(sensorType: != null) => 'assets/icons/component.png',

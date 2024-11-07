@@ -10,3 +10,14 @@ final class LoadTree extends TreeEvent {
 
   LoadTree({required this.companyId});
 }
+
+final class FilteredTree extends TreeEvent {
+  final FilterType type;
+
+  FilteredTree({required this.type});
+}
+
+enum FilterType {
+  energy,
+  critical;
+}
