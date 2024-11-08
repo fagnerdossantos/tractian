@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../logic/bloc/tree_bloc.dart';
+import '../../logic/providers/app_instancies.dart';
 import 'sensor_button.dart';
 
 class SensorsFilterBuilder extends StatefulWidget {
@@ -20,11 +22,17 @@ class _SensorsFilterBuilderState extends State<SensorsFilterBuilder> {
 
   @override
   Widget build(BuildContext context) {
+    //
+    final bloc = getIt<TreeBloc>();
+
     return Row(
       children: [
         SensorButton(
           isSelected: isSelected[0],
-          callBack: () => changeSelection(0),
+          callBack: () {
+            changeSelection(0);
+            bloc.add(FilteredTree(type: FilterType.critical));
+          },
           icon: Icons.energy_savings_leaf_outlined,
           label: "Energy sensor",
         ),

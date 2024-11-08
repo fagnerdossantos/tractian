@@ -22,7 +22,11 @@ class HomeView extends StatelessWidget {
         slivers: [
           //
           const SliverAppBar.large(
-            title: Text('Tractian'),
+            title: Image(
+              image: AssetImage("assets/logos/tractian.png"),
+              height: 18,
+              color: Color(0xFF424242),
+            ),
             backgroundColor: Color(0xFFE0E0E0),
           ),
 

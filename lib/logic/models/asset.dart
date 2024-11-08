@@ -1,6 +1,6 @@
 import 'package:tractian/logic/interfaces/hierarchical_item.dart';
 
-final class Asset implements HierarchicalItem<Asset> {
+final class Asset implements HierarchicalItem {
   //
   @override
   final String id;

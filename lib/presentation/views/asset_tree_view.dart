@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tractian/logic/bloc/tree_bloc.dart';
+import 'package:tractian/logic/providers/app_instancies.dart';
 
 import '../../logic/interfaces/hierarchical_item.dart';
 import '../components/expandable_tile_builder.dart';
@@ -15,10 +17,15 @@ class AssetTreeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //
+    final bloc = getIt<TreeBloc>();
+
     return Scaffold(
       //
       appBar: AppBar(
         backgroundColor: backgroundColor,
+        leading: InkWell(
+            onTap: () => bloc.add(BackHome()),
+            child: const Icon(Icons.arrow_back_ios_new)),
         title: const Text("Assets"),
         centerTitle: true,
       ),

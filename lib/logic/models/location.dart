@@ -30,7 +30,7 @@ final class Location implements HierarchicalItem<Location> {
   });
 
   @override
-  List<Location> hierarchyByStatus({required String status}) {
+  Location? hierarchyByStatus({required String status}) {
     //
     final List<Asset> assetsMatch = [];
     final List<Location> subLocationsMatch = [];
@@ -42,20 +42,20 @@ final class Location implements HierarchicalItem<Location> {
     if (subLocations.isNotEmpty) {
       for (Location location in subLocations) {
         //
-        final hasItem = location.hierarchyByStatus(status: status)[0];
+        final hasItem = location.hierarchyByStatus(status: status);
 
-        subLocationsMatch.add(hasItem);
+        if (hasItem != null) {
+          subLocationsMatch.add(hasItem);
+        }
       }
     }
 
-    if (assetsMatch.isEmpty && subLocationsMatch.isEmpty) return [];
+    if (assetsMatch.isEmpty && subLocationsMatch.isEmpty) return null;
 
-    return [
-      copyWith(
-        subLocations: subLocationsMatch,
-        assets: assetsMatch,
-      )
-    ];
+    return copyWith(
+      subLocations: subLocationsMatch,
+      assets: assetsMatch,
+    );
   }
 
   // Copy and json

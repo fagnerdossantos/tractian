@@ -17,6 +17,8 @@ final class FilteredTree extends TreeEvent {
   FilteredTree({required this.type});
 }
 
+final class BackHome extends TreeEvent {}
+
 enum FilterType {
   energy,
   critical;
